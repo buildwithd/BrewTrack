@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BrewTrack – Café Billing &amp; Inventory</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<aside class="sidebar noprint" id="sidebar">
+  <div class="brand"><span class="logo" data-ic="cup"></span><div><b>BrewTrack</b><small>Café Billing &amp; Inventory</small></div></div>
+  <nav id="nav">
+    <button data-act="go" data-v="dashboard"><i data-ic="home"></i>Dashboard</button>
+    <button data-act="go" data-v="menu"><i data-ic="fork"></i>Menu Management</button>
+    <button data-act="go" data-v="billing"><i data-ic="bill"></i>Order &amp; Billing</button>
+    <button data-act="go" data-v="inventory"><i data-ic="box"></i>Inventory</button>
+    <button data-act="go" data-v="history"><i data-ic="clock"></i>Order History</button>
+    <button data-act="go" data-v="sales"><i data-ic="chart"></i>Sales Summary</button>
+    <button data-act="go" data-v="settings"><i data-ic="gear"></i>Settings</button>
+  </nav>
+  <svg class="deco" viewBox="0 0 200 200" fill="none" stroke="#A78163" stroke-width="3" stroke-linecap="round" aria-hidden="true">
+    <path d="M70 30c-10 14 10 22 0 38M100 24c-10 14 10 22 0 38M130 30c-10 14 10 22 0 38"/>
+    <path d="M40 90h120v34a52 52 0 0 1-52 52H92a52 52 0 0 1-52-52zM160 100h10a18 18 0 0 1 0 36h-12"/>
+    <ellipse cx="100" cy="186" rx="80" ry="10"/><ellipse cx="170" cy="168" rx="9" ry="14" transform="rotate(30 170 168)"/><ellipse cx="30" cy="172" rx="9" ry="14" transform="rotate(-30 30 172)"/>
+  </svg>
+</aside>
+<div class="scrim noprint" data-act="nav"></div>
+<main class="main">
+  <header class="topbar noprint">
+    <button class="icon-btn burger" data-act="nav" aria-label="Toggle navigation" data-ic="menu"></button>
+    <span class="ttl-ic" id="pgIc"></span>
+    <div class="ttl"><h1 id="pgTitle"></h1><p id="pgSub"></p></div>
+    <button class="icon-btn" id="themeBtn" data-act="theme" aria-label="Toggle theme"></button>
+    <div class="profile"><span class="avatar" data-ic="user"></span><span class="hello">Hello, Café Manager</span></div>
+  </header>
+  <section id="view"></section>
+</main>
+<div id="receipt"></div>
+<div class="modal-bg noprint" id="modal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <div class="mhead"><h3 id="mTitle"></h3><button class="icon-btn" data-act="closeModal" aria-label="Close" data-ic="x"></button></div>
+    <div id="mBody"></div>
+    <p class="err" id="mErr"></p>
+    <div class="mfoot"><button class="btn ghost" data-act="closeModal">Close</button><button class="btn" id="mOk" data-act="modalOk">Save</button></div>
+  </div>
+</div>
+<div id="toasts" class="noprint" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>
